@@ -1,3 +1,10 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def iniciosesion(request):
+    return render(request,'core/iniciosesion.html')
+
+def home(request):
+    return render(request,'core/home.html')
+
+
