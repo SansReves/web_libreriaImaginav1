@@ -6,5 +6,31 @@
 <link rel="stylesheet" href="{% static 'core/CSS/catalogo.css' %}" type="text/css">
 {% endblock %}
 {% block contenido %}
+<div>
+    <h1 class="titulo">Libros</h1>
+</div>
+<div class="row" id="cards-libros">
+    {% for l in libros %}
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <div class="card">
+            {% if l.imagen_libro %}
+            <img class="card-img-top" src="#" alt="Card image">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{l.nombre_libro}} </h5>
+                <h6> {{l.autor_libro}} </h6>
+                <p class="card-text">${{l.precio_libro}}</p>
+                <button class="btn btn-outline-secondary" id="btn-correo" type="submit">Agregar</button>
+            </div>
+        </div>
+        
+    </div>
+    {% endfor %}
+</div>
+
+<div>
+    <h2 class="col-lg-12">holi</h2>
+</div>
+
 
 {% endblock %}

@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Libro
 
 
 def iniciosesion(request):
@@ -8,7 +9,12 @@ def home(request):
     return render(request,'core/home.html')
 
 def catalogo(request):
-    return render(request,'core/catalogo.html')
+    libros = Libro.objects.all()
+    data = {
+        'libros' : libros
+
+    }
+    return render(request,'core/catalogo.html',data)
 
 def servicios(request):
     return render(request,'core/servicios.html')

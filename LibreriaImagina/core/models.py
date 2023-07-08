@@ -71,7 +71,7 @@ class Libro(models.Model):
     sinopsis_libro = models.CharField(max_length=250, blank=True, null=True)
     precio_libro = models.IntegerField()
     stock_libro = models.IntegerField()
-    imagen = models.BinaryField(blank=True, null=True)
+    imagen = models.ImageField(upload_to="libros", blank=True, null=True)
     id_catg = models.ForeignKey(CatgLibro, models.DO_NOTHING, db_column='id_catg')
 
     class Meta:
