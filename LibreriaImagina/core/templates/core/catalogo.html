@@ -11,7 +11,7 @@
 </div>
 
 <div class="row" id="cards-libros">
-    
+    {% load humanize %}
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
         {% for l in libros %}
         <div class="card">
@@ -21,7 +21,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{l.nombre_libro}} </h5>
                 <h6> {{l.autor_libro}} </h6>
-                <p class="card-text">${{l.precio_libro}}</p>
+                <p class="card-text">${{l.precio_libro | intcomma}}</p>
                 <button class="btn btn-outline-secondary" id="btn-correo" type="submit">Agregar</button>
             </div>
         </div>
