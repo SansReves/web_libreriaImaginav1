@@ -19,4 +19,7 @@ def quienessomos(request):
 def home(request):
     return render(request,'core/home.html')
 
+def seguimiento(request):
+    return render(request,'core/seguimiento.html')
+
 
