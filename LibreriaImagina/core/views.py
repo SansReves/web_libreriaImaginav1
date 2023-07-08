@@ -12,7 +12,6 @@ def catalogo(request):
     libros = Libro.objects.all()
     data = {
         'libros' : libros
-
     }
     return render(request,'core/catalogo.html',data)
 

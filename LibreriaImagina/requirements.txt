@@ -1,3 +1,4 @@
 Django == 3.2.3
 cx_Oracle
 pillow
+django-admin-interface
