@@ -33,7 +33,7 @@
                         <a class="nav-link" href="{%url 'quienessomos' %}">Quienes Somos</a>
                     </li>
                     <li class="nav-item active mr-4">
-                        <a class="nav-link" href="{%url 'catalogo' %}">Catalogo</a>
+                        <a class="nav-link" href="{%url 'catalogo' %}">Catálogo</a>
                     </li>
                     <li class="nav-item active mr-4">
                         <a class="nav-link" href="{%url 'servicios' %}">Servicios</a>
@@ -58,7 +58,7 @@
                             <a class="dropdown-item" href="#">Cerrar Sesión</a>
                             {% else %}
                             <a class="dropdown-item" href="{% url 'iniciosesion' %}">Iniciar Sesión</a>
-                            <a class="dropdown-item" href="#">Registrate</a>
+                            <a class="dropdown-item" href="{% url 'registrouser' %}">Registrate</a>
                             {% endif %}
                         </div>
                     </li>

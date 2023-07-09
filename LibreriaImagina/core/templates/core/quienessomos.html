@@ -4,7 +4,7 @@
 {%load static%}
 
 {% block css %}
-<link rel="stylesheet" href="#" type="text/css">
+<link rel="stylesheet" href="{% static 'core/CSS/quienessomos.css' %}" type="text/css">
 {% endblock %}
 
 {% block contenido %}
@@ -26,10 +26,10 @@
             <p>Tenemos como visión la busqueda de ser una de las instituciones de referencia en la venta de libros a nivel sudamericano</p>
         </div>
 
-        <div class="col-2"></div>
+        <div class="col-1"></div>
 
-        <div class="col-5" id="img-quien">
-            <img src="{% static 'core/IMG/book_bug.png' %}" width="500" height="500" alt="">
+        <div class="col-6" id="img-quien">
+            <img class="img" src="{% static 'core/IMG/book_bug.png' %}" width="500" height="500" alt="">
         </div>
         
     </div>
