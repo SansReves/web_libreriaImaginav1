@@ -6,25 +6,20 @@
 
 }
 .carousel-inner{
-    width: 200px auto;
-    height: 600px auto;
+    width: 400px auto;
+    height: 500px auto;
 }
 
 .carousel-inner  img{
-    width: 300px auto;
-    height: 600px auto;
+    width: 200px;
+    height: 500px;
     
 }
 
 /* ----------BLOQUE CORREO---------- */
 
 .correo{
-    margin-top: 10px auto;
-    margin-bottom: 10px auto;
-    padding-top: 10px auto;
-    padding-bottom: 10px auto;
-    border-top: 25px;
-    border-bottom: 25px;
+    margin: 30px auto;
 
     background-color: rgb(240,128,128);
     display: inline-flex;
