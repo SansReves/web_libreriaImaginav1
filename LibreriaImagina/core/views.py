@@ -27,4 +27,5 @@ def home(request):
 def seguimiento(request):
     return render(request,'core/seguimiento.html')
 
-
+def registrouser(request):
+    return render(request,'core/registrouser.html')

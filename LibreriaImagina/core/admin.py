@@ -2,6 +2,9 @@ from django.contrib import admin
 from .models import CatgLibro,Cliente,Despacho,Empleado,Estado,Libro,OrdenCompra,OrdenDespacho,OrdenLibro,OrdenServicio,Servicio,TipoCliente,TipoEmpleado,TipoPago
 # Register your models here.
 
+# class ClienteAdmin(admin.ModelAdmin):
+#     list_display = [""]
+
 class OrdenCompraAdmin(admin.ModelAdmin):
     list_display = ["id_compra","fecha_or_compra","total_final_or","id_est","rut_cli"]
     list_filter = ["rut_cli","id_compra","id_est"]

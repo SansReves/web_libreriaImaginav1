@@ -1,0 +1,25 @@
+.container{
+    background-color: rgb(244,241,187);
+    width: 100%;
+    height: 100%;
+}
+
+#presentacion{
+    
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(244,241,187);
+    padding: 20px;
+}
+
+#presentacion #mensj-des{
+    padding: 20px;
+    margin: 30px auto;
+    text-align: center;
+    width: 500px;
+}
+
+#presentacion #mensj-des img{
+    justify-content: center;
+}
