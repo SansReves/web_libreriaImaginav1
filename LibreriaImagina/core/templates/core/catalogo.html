@@ -1,19 +1,19 @@
 {% extends 'core/base.html' %}
 
-{% block titulo%} Catalogo | Libreria Imagina {% endblock %}
+{% block titulo%} Catálogo | Libreria Imagina {% endblock %}
 {%load static%}
 {% block css %}
 <link rel="stylesheet" href="{% static 'core/CSS/catalogo.css' %}" type="text/css">
 {% endblock %}
 {% block contenido %}
 <div>
-    <h1 class="titulo">Libros</h1>
+    <h1 class="titulo">Catálogo de Libros</h1>
 </div>
 
 <div class="row" id="cards-libros">
     {% load humanize %}
-    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-        {% for l in libros %}
+    {% for l in libros %}
+    <div class="col-2">
         <div class="card">
             {% if l.imagen_libro %}
             <img class="card-img-top" src="#" alt="Card image">
@@ -25,9 +25,8 @@
                 <button class="btn btn-outline-secondary" id="btn-correo" type="submit">Agregar</button>
             </div>
         </div>
-        {% endfor %}
     </div>
-    
+    {% endfor %}
 </div>
 
 

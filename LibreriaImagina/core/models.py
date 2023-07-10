@@ -125,6 +125,7 @@ class OrdenServicio(models.Model):
     confirm_serv = models.FloatField(blank=True, null=True)
     id_serv = models.OneToOneField('Servicio', models.DO_NOTHING, db_column='id_serv', primary_key=True)
     id_compra = models.ForeignKey(OrdenCompra, models.DO_NOTHING, db_column='id_compra')
+    detalle_serv = models.CharField(max_length=250, blank=True, null=True)
 
     class Meta:
         managed = False

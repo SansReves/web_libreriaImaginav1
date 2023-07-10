@@ -10,6 +10,8 @@ urlpatterns = [
     path('seguimiento/', seguimiento, name="seguimiento"),
     path('registrouser/', registrouser, name="registrouser"),
     path('cerrarsesion/', cerrarsesion, name="cerrarsesion"),
+    path('form_servicio/', form_servicio, name="form_servicio"),
+    
     
     path('', home, name="home"),
     
