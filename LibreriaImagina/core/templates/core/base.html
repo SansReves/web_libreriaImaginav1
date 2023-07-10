@@ -43,25 +43,25 @@
                     </li>
 
                     <li class="nav-item dropdown mr-4">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            {% if user.is_authenticated %}
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {% if request.COOKIES.cliente_nombre %}
                             Mi Cuenta
                             {% else %}
                             Bienvenid@
                             {% endif %}
-                            <img src="{% static  'core/IMG/usuario.png' %}  " width="45" height="45" alt="">
+                            <img src="{% static 'core/IMG/usuario.png' %}" width="45" height="45" alt="">
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            {% if user.is_authenticated %}
-                            <a class="dropdown-item" href="#">Bienvenid@ : {{ user.username }}</a>
-                            <a class="dropdown-item" href="#">Cerrar Sesión</a>
+                            {% if request.COOKIES.cliente_nombre %}
+                            <a class="dropdown-item" href="#">Bienvenid@: {{ request.COOKIES.cliente_nombre }}</a>
+                            <a class="dropdown-item" href="{% url 'cerrarsesion' %}">Cerrar Sesión</a>
                             {% else %}
                             <a class="dropdown-item" href="{% url 'iniciosesion' %}">Iniciar Sesión</a>
-                            <a class="dropdown-item" href="{% url 'registrouser' %}">Registrate</a>
+                            <a class="dropdown-item" href="{% url 'registrouser' %}">Registrarse</a>
                             {% endif %}
                         </div>
                     </li>
+                                   
 
                 </ul>
                 <a class="navbar-brand" href="#">

@@ -1,11 +1,9 @@
 from django.shortcuts import redirect, render
 from django.contrib import messages
 from .models import Libro, Cliente
-from rest_framework.response import Response
-from django.contrib.auth.hashers import check_password
-from rest_framework.authtoken.models import Token
-import cx_Oracle
 
+import cx_Oracle
+from django.http import HttpResponse
 
 def iniciosesion(request):
     if request.method == 'POST':
@@ -16,15 +14,22 @@ def iniciosesion(request):
         try:
             cliente = Cliente.objects.get(usuario_cli=usuario_cli, contrasenia_cli=contrasenia_cli)
             # Inicio de sesión exitoso
-            # Realiza las acciones necesarias, como almacenar la información del usuario en la sesión, redirigir a la página de inicio, etc.
-            return render (request,'core/home.html')
+            # Almacena el nombre del cliente en una cookie
+            response = redirect('home')
+            response.set_cookie('cliente_nombre', cliente.nombre_cli)
+            return response
         except Cliente.DoesNotExist:
             # Usuario o contraseña incorrectos
             messages.error(request, 'Credenciales inválidas')
-            #return Response("Credenciales incorrecta")
-            #return Response({'message': 'Credenciales inválidas'})
 
-    return render(request,'registration/iniciosesion.html')
+    return render(request, 'registration/iniciosesion.html')
+
+
+def cerrarsesion(request):
+    response = redirect('iniciosesion')
+    response.delete_cookie('cliente_nombre')
+    return response
+
 
 # def iniciosesion(request):
 #     if request.method == 'POST':
